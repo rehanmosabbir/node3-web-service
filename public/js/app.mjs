@@ -22,18 +22,16 @@ formEl.addEventListener("submit", (e) => {
   const location = inputEl.value;
   messageOneEl.textContent = "Loading....";
   messageTwoEl.textContent = "";
-  fetch(`http://localhost:3000/weather?address=${location}`).then(
-    (response) => {
-      response.json().then((data) => {
-        inputEl.value = "";
-        if (data.error) {
-          messageOneEl.textContent = `${data.error}`;
-          messageTwoEl.textContent = "";
-        } else {
-          messageOneEl.textContent = `Location : ${data.location}`;
-          messageTwoEl.textContent = `Current Temperature : ${data.currentTemp}°C`;
-        }
-      });
-    }
-  );
+  fetch(`/weather?address=${location}`).then((response) => {
+    response.json().then((data) => {
+      inputEl.value = "";
+      if (data.error) {
+        messageOneEl.textContent = `${data.error}`;
+        messageTwoEl.textContent = "";
+      } else {
+        messageOneEl.textContent = `Location : ${data.location}`;
+        messageTwoEl.textContent = `Current Temperature : ${data.currentTemp}°C`;
+      }
+    });
+  });
 });

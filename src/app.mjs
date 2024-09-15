@@ -6,6 +6,7 @@ import { geocode } from "../src/utils/geocode.mjs";
 import { forecast } from "../src/utils/forecast.mjs";
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 const publicDirectoryPath = path.join(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -97,6 +98,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server is up on port 3000");
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`);
 });
