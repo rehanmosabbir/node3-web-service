@@ -1,17 +1,3 @@
-console.log("Client side javascript has been loaded");
-
-// fetch("https://puzzle.mead.io/puzzle").then((response) => {
-//   response.json().then((data) => {
-//     console.log(data);
-//   });
-// });
-
-// fetch("http://localhost:3000/weather?address=dhaka").then((response) => {
-//   response.json().then((data) => {
-//     console.log(data);
-//   });
-// });
-
 const formEl = document.querySelector("form");
 const inputEl = document.querySelector("input");
 const messageOneEl = document.querySelector("#message-1");
